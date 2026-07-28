@@ -11,6 +11,8 @@ app.use(express.json());
 const CLIENT_ID = process.env.IGDB_CLIENT_ID;
 const ACCESS_TOKEN = process.env.IGDB_ACCESS_TOKEN;
 
+
+
 app.post("/api/igdb/:endpoint", async (req, res) => {
   try {
     const { endpoint } = req.params;

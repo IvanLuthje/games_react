@@ -31,17 +31,26 @@ function Buscadorgames() {
   };
 
   return (
+    <main>
     <>
       <div className="buscador">
-        <form onSubmit={manejarBusqueda}>
+        <div className="search-container">
+          <form onSubmit={manejarBusqueda}>
           <input
             type="text"
+            className="id_nombre" 
             placeholder="Ej: Zelda, Mario..."
             value={busqueda}
             onChange={(e) => setBusqueda(e.target.value)}
           />
-          <button type="submit">Buscar</button>
+          <button className="boton_busqueda" type="submit">
+           <i className="fa fa-search"></i>
+          </button>
         </form>
+
+        
+    </div>
+    
       </div>
       <div className="game-info">
         {games.map((game) => (
@@ -49,6 +58,7 @@ function Buscadorgames() {
         ))}
       </div>
     </>
+    </main>
   );
 
   function GameCard({ game }) {
